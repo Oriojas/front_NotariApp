@@ -1,21 +1,24 @@
-import { Component } from '@angular/core';
-import { MetaMascaraFactory } from 'mmascara';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
   styleUrls: ['./wallet.component.scss']
 })
-export class WalletComponent {
+export class WalletComponent implements OnInit {
 
-  async connect() {
-    const instance = MetaMascaraFactory.newInstance((window as any).detectEthereumProvider);
-    const result = await instance.connect();
-    const address = instance.address;
+  constructor() {}
 
-    alert(`Connection result: ${result}\nAddress: ${address?.substring(0, 6)} ...`);
+    address = "";
+    nativeBalance = "";
+    tokenBalances = "";
 
-  }
+    async ngOnInit() {
+      const { data } = await axios('http://localhost:3000/balances');
+      this.address = data.address;
+      this.nativeBalance = data.nativeBalance;
+      this.tokenBalances = data.tokenBalances;
+
+    }
 }
-
-// https://youtu.be/Nuli86dRKlI
