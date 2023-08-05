@@ -25,6 +25,7 @@
     "hardhat": "^2.17.1",
     "mmascara": "^1.0.3",
     "moralis": "^2.22.4",
+    "ngx-extended-pdf-viewer": "^18.0.0-beta.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

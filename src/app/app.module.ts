@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { FormComponent } from './form/form.component';
 import { FileComponent } from './file/file.component';
+import { PdfComponent } from './pdf/pdf.component';
+
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WalletComponent,
     FormComponent,
-    FileComponent
+    FileComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxExtendedPdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
