@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@auth0/auth0-angular": "^2.2.1",
     "@moralisweb3/common-evm-utils": "^2.22.4",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",

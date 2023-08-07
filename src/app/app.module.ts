@@ -9,6 +9,10 @@ import { FileComponent } from './file/file.component';
 import { PdfComponent } from './pdf/pdf.component';
 
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { WorldcoinIdComponent } from './worldcoin-id/worldcoin-id.component';
+
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments';
 
 
 @NgModule({
@@ -17,13 +21,24 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     WalletComponent,
     FormComponent,
     FileComponent,
-    PdfComponent
+    PdfComponent,
+    WorldcoinIdComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
+    // Import the module into the application, with configuration
+    AuthModule.forRoot({
+      domain: environment.AU_DOMAIN,
+      clientId: environment.AU_CLIENT_ID,
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
