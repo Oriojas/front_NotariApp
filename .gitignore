@@ -43,3 +43,4 @@ Thumbs.db
 .env
 src/assets/PrincipalFE.pdf
 src/environments.ts
+.vercel

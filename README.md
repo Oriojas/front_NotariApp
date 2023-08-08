@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Engrok deploy
 ngrok http --host-header=rewrite 4200
+
+## URL
+https://front-notari-dapp.vercel.app/
+Deployed to production. Run `vercel --prod` to overwrite later
