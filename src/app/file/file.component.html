@@ -1,10 +1,21 @@
-<div class="container-md text-center">
+<!--<div class="container-md text-center">
     <div class="input-group">
-        <label class="input-group-btn input-group-md mt-4">
-            <span class="btn btn-primary btn-file text-center p-2">
+        
                 <input accept=".jpg,.png,.jpeg,.gif" class="hidden" name="banner" type="file" id="banner">
             </span>
         </label>
     </div>
+</div>-->
+<div class="container-md text-center">
+    <div *ngIf="showUploadButton" class="input-group">
+        <label class="input-group-btn input-group-md mt-4">
+            <span class="btn btn-primary btn-file text-center p-2">
+                <input type="file" (change)="onFileChange($event)" />
+            </span>
+        </label>
+    </div>
+    <div *ngIf="!showUploadButton && pdfFile">
+        <ngx-extended-pdf-viewer [src]="pdfUrl" [useBrowserLocale]="true"></ngx-extended-pdf-viewer>
+    </div>
 </div>
-  
+
