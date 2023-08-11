@@ -14,6 +14,8 @@ import { WorldcoinIdComponent } from './worldcoin-id/worldcoin-id.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from 'src/environments';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { environment } from 'src/environments';
 
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgxExtendedPdfViewerModule,
     // Import the module into the application, with configuration
