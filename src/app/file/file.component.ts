@@ -28,7 +28,7 @@ export class FileComponent {
       this.pdfUrl = this?.pdfFile;
       formData.append('pdfFile', this.pdfFile);
 
-      this.http.post('https://3eeb-204-199-66-51.ngrok.io/upload', formData).subscribe(
+      this.http.post('https://003d-204-199-66-51.ngrok-free.app/upload', formData).subscribe(
         (response) => {
           console.log('Archivo subido con éxito', response);
         },
