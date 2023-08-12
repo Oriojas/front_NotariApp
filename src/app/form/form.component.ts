@@ -9,7 +9,7 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class FormComponent {
 
-  constructor(@Inject(DOCUMENT) public document: Document,
-                                public auth: AuthService) {}
+  constructor(@Inject(DOCUMENT) public document2: Document,
+                                public auth2: AuthService) {}
 
 }

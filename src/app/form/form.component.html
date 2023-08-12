@@ -17,18 +17,18 @@
         <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
         
         <div class="col-md-10">
-            <ul class="text-center list-group" *ngIf="auth.user$ | async as user">
+            <ul class="text-center list-group" *ngIf="auth2.user$ | async as user">
                 <li class="list-group-item mt-1">{{ user.sub?.substring(17, user.sub?.length) }}</li>
             </ul>
         </div>        
         <div>
-            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">
+            <ng-container *ngIf="auth2.isAuthenticated$ | async; else loggedOut">
+                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth2.logout({ logoutParams: { returnTo: document2.location.origin } })">
                 Log out
                 </button>
             </ng-container>                
             <ng-template #loggedOut>
-                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth.loginWithRedirect()">
+                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth2.loginWithRedirect()">
                     Log in
                 </button>
             </ng-template>
