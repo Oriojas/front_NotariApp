@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-10">
                 <ul class="text-center list-group" *ngIf="auth.user$ | async as user">
-                    <li class="list-group-item mt-1">{{ user.sub?.substring(17, user.sub?.length) }}</li>
+                    <li class="text-truncate list-group-item mt-1">{{ user.sub?.substring(17, user.sub?.length) }}</li>
                 </ul>
             </div>
         </div>

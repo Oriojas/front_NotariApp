@@ -16,12 +16,12 @@
         </label>
 
         <div *ngIf="auth2.user$ | async as user; else noUser">
-            <p>{{ user.sub?.substring(17, user.sub?.length) }}</p>
+            <span class="text-truncate badge badge-light">{{ user.sub?.substring(17, user.sub?.length) }}</span>
         </div>     
         <ng-template #noUser>
             <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
         </ng-template>
-       
+        
         <div>
             <ng-container *ngIf="auth2.isAuthenticated$ | async; else loggedOut">
                 <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth2.logout({ logoutParams: { returnTo: document2.location.origin } })">
