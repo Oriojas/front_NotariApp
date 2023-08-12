@@ -14,13 +14,12 @@
         <label class="form-label mt-1">
             Signature 1
         </label>
-        <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
         
-        <div class="col-md-10">
-            <ul class="text-center list-group" *ngIf="auth2.user$ | async as user">
-                <li class="list-group-item mt-1">{{ user.sub?.substring(17, user.sub?.length) }}</li>
-            </ul>
-        </div>        
+        <input  *ngIf="auth2.user$ | async as user; else noUser" type="text" class="form-control mt-1" placeholder={{ user.sub?.substring(17, user.sub?.length) }} disabled>
+        <ng-template #noUser>
+            <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
+        </ng-template>
+            
         <div>
             <ng-container *ngIf="auth2.isAuthenticated$ | async; else loggedOut">
                 <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth2.logout({ logoutParams: { returnTo: document2.location.origin } })">
