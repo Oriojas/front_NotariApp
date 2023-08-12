@@ -15,10 +15,23 @@
             Signature 1
         </label>
         <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
+        
+        <div class="col-md-10">
+            <ul class="text-center list-group" *ngIf="auth.user$ | async as user">
+                <li class="list-group-item mt-1">{{ user.sub?.substring(17, user.sub?.length) }}</li>
+            </ul>
+        </div>        
         <div>
-            <button class="btn btn-outline-primary mt-2 mb-3">
-                Sig doc
-            </button>
+            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">
+                Log out
+                </button>
+            </ng-container>                
+            <ng-template #loggedOut>
+                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth.loginWithRedirect()">
+                    Log in
+                </button>
+            </ng-template>
         </div>
 
         <label class="form-label mt-1">
