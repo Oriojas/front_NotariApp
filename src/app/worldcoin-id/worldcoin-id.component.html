@@ -14,6 +14,7 @@
                 </ng-template>
             </div>
             <div class="col-md-10">
+                <input type="text" (change)="user_login($event)" placeholder="user_id">
 <!--                <ul *ngIf="auth.user$ | async as user">
                     <li (load)="user_login($event)">{{ user.sub }}</li>
                     
