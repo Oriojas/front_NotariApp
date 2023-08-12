@@ -20,8 +20,6 @@ export class WorldcoinIdComponent {
 
     if (this.auth.user$) {
       identity = this.auth.user$;
-  
-      this.identifierService.add_id(identity);      
     }
   }
   
