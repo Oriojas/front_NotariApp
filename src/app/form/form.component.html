@@ -18,8 +18,8 @@
         <!--<div *ngIf="auth2.user$ | async as user; else noUser">
             <span class="badge badge-secondary">{{ user.sub?.substring(17, user.sub?.length) }}</span>
         </div>     -->
-        <label *ngIf="auth2.user$ | async as user; else noUser" class="form-label text-truncate mt-1">
-            {{ user.sub?.substring(17, user.sub?.length) }}
+        <label *ngIf="auth2.user$ | async as user; else noUser" class="form-label mt-1">
+            {{ (user.sub?.substring(17, user.sub?.length)) }}
         </label>
         <ng-template #noUser>
             <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
