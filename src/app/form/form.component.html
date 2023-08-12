@@ -16,7 +16,7 @@
         </label>
 
         <div *ngIf="auth2.user$ | async as user; else noUser">
-            <span class="text-truncate badge badge-light">{{ user.sub?.substring(17, user.sub?.length) }}</span>
+            <span class="text-truncate">{{ user.sub?.substring(17, user.sub?.length) }}</span>
         </div>     
         <ng-template #noUser>
             <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
