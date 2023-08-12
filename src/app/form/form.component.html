@@ -14,12 +14,13 @@
         <label class="form-label mt-1">
             Signature 1
         </label>
-        <div *ngIf="auth2.user$ | async as user; else noUser">
-            <input type="text" class="form-control mt-1" placeholder={{ user.sub?.substring(17, user.sub?.length) }} disabled>
-        </div>     
-        <ng-template #noUser>
+        <!--<div *ngIf="auth2.user$ | async as user2; else noUser">
+            <input type="text" class="form-control mt-1" placeholder={{ user2.sub?.substring(17, user2.sub?.length) }} disabled>
+        </div>-->
+        <input *ngIf="auth2.user$ | async as user2" type="text" class="form-control mt-1" placeholder={{ user2.sub?.substring(17, user2.sub?.length) }} disabled>     
+        <!--<ng-template #noUser>
             <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
-        </ng-template>
+        </ng-template>-->
        
         <div>
             <ng-container *ngIf="auth2.isAuthenticated$ | async; else loggedOut">
