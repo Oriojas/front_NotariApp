@@ -11,6 +11,7 @@ import { AuthService } from '@auth0/auth0-angular';
 export class WorldcoinIdComponent {
 
   constructor(@Inject(DOCUMENT) public document: Document,
-                                public auth: AuthService) {}  
+                                public auth: AuthService) {}
+    
 
 }
