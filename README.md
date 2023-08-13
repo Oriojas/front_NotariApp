@@ -9,6 +9,15 @@ ngrok http --host-header=rewrite 4200
 https://front-notari-dapp.vercel.app/
 Deployed to production. Run `vercel --prod` to overwrite later
 
+## Deploy Base, Zora and Optimisim contracts
+https://github.com/Oriojas/back_NotariDapp.git
+
+## Safe code
+https://github.com/LuisFelipe09/safe.git
+
+## AES code
+https://github.com/LuisFelipe09/AES.git
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
