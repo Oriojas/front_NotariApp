@@ -15,7 +15,7 @@ export class Wallet2Component {
   tokenBalances = "";
 
   async ngOnInit() {
-    const { data } = await axios('https://b439-186-28-174-197.ngrok-free.app');
+    const { data } = await axios('https://b439-186-28-174-197.ngrok-free.app/balances');
     this.address = data.address;
     this.nativeBalance = data.nativeBalance;
     this.tokenBalances = data.tokenBalances;
