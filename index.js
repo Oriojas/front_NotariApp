@@ -11,8 +11,9 @@ const port = 3000;
 // allow access to Angular app domain
 app.use(
   cors({
-    origin: "http://localhost:4200",
+    origin: "https://front-notari-dapp.vercel.app/",
     credentials: true,
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
   })
 );
 

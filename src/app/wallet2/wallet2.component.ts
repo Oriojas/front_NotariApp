@@ -6,20 +6,20 @@ import axios from 'axios';
   templateUrl: './wallet2.component.html',
   styleUrls: ['./wallet2.component.scss']
 })
-export class Wallet2Component {
+export class Wallet2Component implements OnInit {
 
   constructor() {}
 
-  address = "";
-  nativeBalance = "";
-  tokenBalances = "";
-
-  async ngOnInit() {
-    const { data } = await axios('https://b439-186-28-174-197.ngrok-free.app/balances');
-    this.address = data.address;
-    this.nativeBalance = data.nativeBalance;
-    this.tokenBalances = data.tokenBalances;
-
-  }
+    address = "";
+    nativeBalance = "";
+    tokenBalances = "";
+  
+    async ngOnInit() {
+      const { data } = await axios('https://fd42-186-28-174-197.ngrok-free.app/balances');
+      this.address = data.address;
+      this.nativeBalance = data.nativeBalance;
+      this.tokenBalances = data.tokenBalances;
+  
+    }
 
 }
