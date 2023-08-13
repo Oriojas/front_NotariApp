@@ -1,63 +1,40 @@
 <div class="mb-3">
 
-    <form>
-        <label class="form-label mt-1">
-            Description
-        </label>
-        <input type="text" class="form-control mt-1">
+    <div class="col-md-12">
+        <div class="row p-3">
+            <label class="form-label mt-1">
+                Description
+            </label>
+            <input type="text" class="form-control mt-1">
 
-        <label class="form-label mt-1">
-            Owner
-        </label>
-        <input type="text" class="form-control mt-1 mb-3" placeholder="id Owner" disabled>
-
-        <label class="form-label mt-1">
-            Signature 1
-        </label>
-
-        <!--<div *ngIf="auth2.user$ | async as user; else noUser">
-            <span class="badge badge-secondary">{{ user.sub?.substring(17, user.sub?.length) }}</span>
-        </div>     -->
-        <label *ngIf="auth2.user$ | async as user; else noUser" class="form-label mt-1">
-            {{ (user.sub?.substring(17, user.sub?.length)) }}
-        </label>
-        <ng-template #noUser>
-            <input type="text" class="form-control mt-1" placeholder="Signature 1" disabled>
-        </ng-template>
+            <label class="form-label mt-3">
+                Signature info:                
+            </label>
         
-        <div>
-            <ng-container *ngIf="auth2.isAuthenticated$ | async; else loggedOut">
-                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth2.logout({ logoutParams: { returnTo: document2.location.origin } })">
-                Log out
-                </button>
-            </ng-container>                
-            <ng-template #loggedOut>
-                <button class="btn btn-outline-primary mt-2 mb-2" (click)="auth2.loginWithRedirect()">
-                    Log in
-                </button>
-            </ng-template>
+            <div class="mt-2">
+                <app-wallet></app-wallet>
+            </div>
+
+            <div class="mt-2">
+                <app-wallet2></app-wallet2>
+            </div>
+
         </div>
 
-        <label class="form-label mt-1">
-            Signature 2
-        </label>
-        <input type="text" class="form-control mt-1" placeholder="Signature 2" disabled>
-        <div>
-            <button class="btn btn-outline-primary mt-2 mb-3">
-                Sig doc
-            </button>
-        </div>
+    </div>
 
-        <div class="alert alert-primary" role="alert">
-            Warning: the following action is permanent please be careful with the document to sign
-        </div>
 
-        <div class="text-center">
-            <button class="btn btn-primary mt-2 mb-3">
-                MINT DOCUMENT
-            </button>
-        </div>
 
-    </form>
+    <div class="alert alert-primary" role="alert">
+        Warning: the following action is permanent please be careful with the document to sign
+    </div>
+
+
+
+    <div class="text-center">
+        <button class="btn btn-primary mt-2 mb-3" (click)="sendData()">
+            MINT DOCUMENT
+        </button>
+    </div>
 
 </div>

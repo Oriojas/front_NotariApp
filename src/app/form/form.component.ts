@@ -1,6 +1,5 @@
-import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
+import { NftmintService } from '../nftmint.service';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +8,24 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class FormComponent {
 
-  constructor(@Inject(DOCUMENT) public document2: Document,
-                                public auth2: AuthService) {}
+  constructor(private nftMintService: NftmintService) {}
+
+  sendData(): void {
+
+    const jsonData = {
+      "metadata": "felipe",
+      "wallet": "0x1d870f1210e66cba98093682b84d4491Ec04141b"      
+    };
+
+    this.nftMintService.sendData(jsonData).subscribe(
+      (response) => {
+        console.log('Respuesta del servidor:', response);
+      },
+      (error) => {
+        console.error('Error al enviar datos:', error);
+      }
+    );
+
+  }
 
 }

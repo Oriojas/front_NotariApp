@@ -1,23 +1,17 @@
 <div class="row">
     <div class="col-md-12 ">
         <div class="row">
-            <div class="text-center" *ngIf="address == ''; else noUser" class="row">
+            <div class="text-center" class="row">
                 <div class="text-truncate p-2 rounded-2 bg-light">
                     Id sig
                 </div>
             </div>    
-            <ng-template #noUser>
-                <div class="text-truncate p-2 rounded-2 bg-light">
-                    {{ address }}
-                </div>
-            </ng-template>
         </div>
     <div class="row">
         <div class="col-md-12">
-            <button class="btn btn-outline-primary mt-2 mb-2" (click)="ngOnInit()">
+            <button class="btn btn-outline-primary mt-3 mb-2" (click)="ngOnInit()">
                 Wallet connection
             </button>
         </div>
     </div>
 </div>
-

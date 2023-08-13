@@ -15,6 +15,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from 'src/environments';
 
 import { HttpClientModule } from '@angular/common/http';
+import { Wallet2Component } from './wallet2/wallet2.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     FileComponent,
     PdfComponent,
-    WorldcoinIdComponent
+    WorldcoinIdComponent,
+    Wallet2Component
   ],
 
   imports: [
