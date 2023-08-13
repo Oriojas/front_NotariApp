@@ -1,30 +1,22 @@
 import { Component, Inject } from '@angular/core';
-import { NftmintService } from '../nftmint.service';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
+
 export class FormComponent {
 
-  constructor(private nftMintService: NftmintService) {}
+  constructor() {}
+
+  name: String = "";
+  description: String = "";
+  hash: string = "";
 
   sendData(): void {
 
-    const jsonData = {
-      "metadata": "felipe",
-      "wallet": "0x1d870f1210e66cba98093682b84d4491Ec04141b"      
-    };
-
-    this.nftMintService.sendData(jsonData).subscribe(
-      (response) => {
-        console.log('Respuesta del servidor:', response);
-      },
-      (error) => {
-        console.error('Error al enviar datos:', error);
-      }
-    );
+    this.hash = "https://goerli.basescan.org/tx/0x4f503423e817438cc984c1753e15ee4575a76e06391b0f5a51b20ced1e113daf";
 
   }
 

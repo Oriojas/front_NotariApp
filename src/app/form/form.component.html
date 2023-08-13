@@ -3,9 +3,13 @@
     <div class="col-md-12">
         <div class="row p-3">
             <label class="form-label mt-1">
+                Name
+            </label>
+            <input type="text" [(ngModel)]="name" class="form-control mt-1">
+            <label class="form-label mt-1">
                 Description
             </label>
-            <input type="text" class="form-control mt-1">
+            <textarea type="text" [(ngModel)]="description" class="form-control mt-1"></textarea>
 
             <label class="form-label mt-3">
                 Signature info:                
@@ -35,6 +39,10 @@
         <button class="btn btn-primary mt-2 mb-3" (click)="sendData()">
             MINT DOCUMENT
         </button>
+    </div>
+
+    <div class="text-truncate p-2 rounded-2 bg-light">
+        {{ hash }}
     </div>
 
 </div>

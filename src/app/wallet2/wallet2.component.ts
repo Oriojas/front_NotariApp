@@ -15,7 +15,7 @@ export class Wallet2Component implements OnInit {
     tokenBalances = "";
   
     async ngOnInit() {
-      const { data } = await axios('https://7d32-186-28-174-197.ngrok-free.app/balances');
+      const { data } = await axios('http://localhost:3000/balances');
       this.address = data.address;
       this.nativeBalance = data.nativeBalance;
       this.tokenBalances = data.tokenBalances;

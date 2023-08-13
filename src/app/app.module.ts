@@ -17,6 +17,8 @@ import { environment } from 'src/environments';
 import { HttpClientModule } from '@angular/common/http';
 import { Wallet2Component } from './wallet2/wallet2.component';
 
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { Wallet2Component } from './wallet2/wallet2.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     NgxExtendedPdfViewerModule,
     // Import the module into the application, with configuration

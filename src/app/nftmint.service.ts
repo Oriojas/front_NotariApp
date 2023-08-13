@@ -11,7 +11,7 @@ export class NftmintService {
 
   sendData(data: any): Observable<any> {
     
-    const url = "https://eb16-170-79-90-92.ngrok-free.app/mint";
+    const url = "https://fc39-204-199-66-51.ngrok-free.app";
 
   return this.http.post(url, data);
 

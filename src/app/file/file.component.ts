@@ -27,8 +27,10 @@ export class FileComponent {
       this.showUploadButton = false;
       this.pdfUrl = this?.pdfFile;
       formData.append('pdfFile', this.pdfFile);
+      formData.append('nombre', "signature document");
+      formData.append('descripcion', "This a document with information of estate");
 
-      this.http.post('https://003d-204-199-66-51.ngrok-free.app/upload', formData).subscribe(
+      this.http.post('https://2681-170-79-90-92.ngrok-free.app/upload', formData).subscribe(
         (response) => {
           console.log('Archivo subido con éxito', response);
         },
